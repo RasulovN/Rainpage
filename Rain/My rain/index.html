@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain bgs</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <audio id="sound" src="./rain.mp3" controls>
+        </audio>
+        <img id="background" src="" alt="background">
+    </section>
+
+    <script src="./rainyday.js"></script>
+    <script>
+        function rain(){
+            const image = document.getElementById('background');
+            const sound = document.getElementById('sound');
+            image.onload = function(){
+                var rainyDay = new RainyDay({
+                    image: this,
+                    blur: 0.5
+                })
+                RainyDay.rain([
+                    [5,2,2]
+                ],0)
+            }
+            image.src = 'bg2.jpg';
+            sound.src = './rain.mp3';
+        }
+        // new RainyDay({
+        //     sound: 'sound/rain.mp3'
+        // })
+
+        rain();
+    </script>
+</body>
+</html>
